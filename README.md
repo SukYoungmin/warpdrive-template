@@ -6,7 +6,7 @@ Warpdrive template for Django to create Docker image and deploy to OpenShift3. I
 git clone https://github.com/djstein/warpdrive-template.git
 virtualenv -p python3 venv
 pip install -Ur requirements.txt
-npm run install     # in vueapp/
+npm  install     # in vueapp/
 
 # Do not add warpdrive to requirements.txt
 pip install warpdrive
@@ -46,5 +46,5 @@ docker login
 docker push <docker.hub username>/<repo>:<tag>
 
 # Create OC app after project is created
-oc new-app <docker.hub username>/<repo>:<tag>
+oc new-app --docker-image="<docker.hub username>/<repo>:<tag>" 
 ```
